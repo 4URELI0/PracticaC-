@@ -3,11 +3,12 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int *pA;      // Declaramos un puntero
-    pA = new int; // solicitamos memoria del operador "new" para el numero entero
-    *pA = 21;     // Modificamos el valor entero al cual apuntamos
+    /*Ejemplo de apuntadores*/
 
-    cout << "Valor de la variable: " << *pA << endl;
-    cout << "Direccion de la memoria: " << &pA << endl;
+    char *apuntador = NULL;//Declaramos un puntero, lo declaramos como NULL para detectar errores facilmente
+    char letra;//declaramos una varibale primitiva
+    apuntador = &letra;//obtenemos la direccion de la variable
+    *apuntador = 't';//Modificamos la variable usando el '*' del puntero
+    cout << letra;
     return 0;
 }
