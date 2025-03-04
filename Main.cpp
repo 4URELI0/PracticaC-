@@ -3,40 +3,10 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int n = 6;
+    int * punteroA;//Declarar el puntero que guardara la direccion
+    int variableEnt = 10;//Una variable que se inicia con 10
 
-    for (int i = n / 2; i <= n; i += 2)
-    {
-        cout << " ";
-        for (int j = 1; j < n - i; j += 2)
-        {
-            cout << " ";
-        }
-        for (int j = 1; j <= i; j++)
-        {
-            cout << "*" ;
-        }
-        for(int j = 1; j <= n - i; j++)
-        {
-            cout << " ";
-        }
-        for(int j = 1; j <= i; j++)
-        {
-            cout << "*";
-        }
-        cout << endl;
-    }
-    for(int i = n; i >= 1; i--)
-    {
-        for(int j = i; j < n; j++)
-        {
-            cout << " ";
-        }
-        for(int j = 1; j <= (i * 2) - 1; j++)
-        {
-            cout << "*";
-        }
-        cout << endl;
-    }
+    punteroA = &variableEnt;//el "&" significa "direccion de" y el nombre de la variable que queremos saber su direccion
+    cout << punteroA;
     return 0;
 }
