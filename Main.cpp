@@ -3,30 +3,20 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    string* titulos = NULL;
-    string* autores = NULL;
-    int tamanio;
-    cout << "Cuantos libros desea ingresar?" << endl;
-    
-    string entrada;
-    getline(cin, entrada);
-    tamanio = stoi(entrada);
+    /*Ejemplo con un solo valor*/
 
-    titulos = new string[tamanio];//El new es como guardar espacio para esa variable
-    autores = new string[tamanio];
+    int* ptr = new int;//Reservamos memoria para un numero entero
+    *ptr = 10;//Asignamos un valor
+
+    cout << *ptr;//Mostramos el valor
+    delete ptr;//Liberamos memoria
     
-    cout << "Por favor ingrese la siguiente informacion de los libros: \n";
-    for(int i = 0; i < tamanio; i++)
-    {
-        cout << "\n****** Libro " << i + 1 << "******\n";
-        cout << "Titulo: ";
-        getline(cin, titulos[i]);
-        cout << "Autor: ";
-        getline(cin, autores[i]);
-    }
-    delete[] titulos;//Una vez usado borramos los datos para liberar espacio
-    delete[] autores;
-    titulos = NULL;
-    autores = NULL;
+    /*Ejemplo con un arreglo*/
+    int* arr = new int[5];//Reserva memoria para un array de 5 enteros
+    arr[0] = 1;//Asigna valores 
+    arr[1] = 2;
+
+    delete[] arr;//Libera memoria del array
+    
     return 0;
 }
