@@ -3,20 +3,32 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    /*Ejemplo con un solo valor*/
+    /*int aiNotas[10];//Array de numeros enteros
+    int * pINotas;//Puntero para el array *Debe ser del mismo tipo de dato osea un int
 
-    int* ptr = new int;//Reservamos memoria para un numero entero
-    *ptr = 10;//Asignamos un valor
+    //int * pINotas = new int;//Cuando queremos apuntar a un solo numero entero
+    int * pINotas = new int[10];//Cuando queremos apuntar a un array */
 
-    cout << *ptr;//Mostramos el valor
-    delete ptr;//Liberamos memoria
+    unsigned short int tamArray;
     
-    /*Ejemplo con un arreglo*/
-    int* arr = new int[5];//Reserva memoria para un array de 5 enteros
-    arr[0] = 1;//Asigna valores 
-    arr[1] = 2;
+    cout << "Ingrese el tamanio del array: " << endl;
+    cin >> tamArray;
+    cout << endl;
 
-    delete[] arr;//Libera memoria del array
+    int * piNotas = new int[tamArray];
     
+    /*Verificamos que la memoria haya sido asignada, en caso que no lo fuera apuntaria a 0*/
+    if (piNotas)
+    {
+        long iSumaNotas = 0;
+        for (int i = 0; i < tamArray; i++)
+        {
+            cout << endl << "Ingrese nota " << i + 1 << ": ";
+            cin >> piNotas[i];
+            iSumaNotas += piNotas[i];
+        }
+        cout << "El promedio de notas es: " << iSumaNotas / (float) tamArray << endl;
+        delete[] piNotas;
+    }
     return 0;
 }
