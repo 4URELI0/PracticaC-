@@ -3,14 +3,17 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    //Una variable
-    int iVal = 10;
-    //Una referencia de la variable anterior
-    int &ref = iVal;
+    /*PUNTERO*/
+    int x, *p;
+    p = &x;
 
-    /*Modifica la referencia "ref" que es como modificar la variable iVal*/
-    ref = 20;
+    *p = 5;
+    cout << "El valor de x es: " << x << endl;
 
-    cout << "El valor de ref iVal es: " << iVal << endl;
+    /*REFERENCIA*/
+    int x1;
+    int &r = x1;
+    r = 5;
+    cout << x1;
     return 0;
 }
