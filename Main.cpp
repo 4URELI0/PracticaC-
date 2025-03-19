@@ -1,19 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void Food(int *a)
+{
+    *a = 20;
+}
+void Food2(int b)
+{
+    b = 30;
+}
 int main(int argc, char const *argv[])
 {
-    /*PUNTERO*/
-    int x, *p;
-    p = &x;
+    int iVar = 10;
+    int iVar2 = 40;
+    //Paso la variable iVar por el Valor
+    Food(&iVar);
+    //iVar fue modificado
+    cout << iVar << endl;
 
-    *p = 5;
-    cout << "El valor de x es: " << x << endl;
-
-    /*REFERENCIA*/
-    int x1;
-    int &r = x1;
-    r = 5;
-    cout << x1;
+    /*iVar2 no fue modificado*/
+    Food2(iVar2);
+    cout << iVar2 << endl;
     return 0;
 }
