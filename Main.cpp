@@ -3,10 +3,10 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    /*FUNCION POSINCREMENTO*/
-    //Primero se realiza la asignacion y luego el incremento
+    /*FUNCION PREINCREMENTO*/
+    //Primero se realiza el incremento y luego la asignacion
     int a = 1;
-    int b = a++;//Primero se asigna la variable a 1 y luego incrementa en a
+    int b = ++a;
 
     cout <<"El valor de a: "<< a << endl;
     cout <<"El valor de b: "<< b << endl;
